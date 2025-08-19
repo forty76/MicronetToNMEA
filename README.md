@@ -58,6 +58,21 @@ GND    <-> GND
 3.3V   <-- 3.3V
 ```
 
+
+Supposing you use a Teensy 4.0 board, the SW is configured by default to be connected via SPI bus to a CC1101 IC with the following scheme :
+
+```
+CC1101     Teensy
+SI     <-- Pin 11 (MOSI0)
+SO     --> Pin 12 (MISO0)
+SCK    <-- Pin 14 (SCK0)
+CS     <-- Pin 10 (CS0)
+GD0    --> Pin 9
+GND    <-> GND
+3.3V   <-- 3.3V
+```
+
+
 MicronetToNMEA can also collect sentences from an NMEA GPS/GNSS connected to UART 1 of the board :
 
 ```
