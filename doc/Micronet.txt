@@ -182,11 +182,17 @@ Here is the format (with an example) :
 |83 03 77 37|83 03 77 37|01|09|00|72|28|28|83 03 77 37|1C|02 03 90 87|0C|01 0B C0 22|26|81 03 70 82|0E|83 03 77 37|0E|00 00|52|
 
 DIDn - Devices IDs of devices attached to the network.
+
+DF - 09 initiate a normal communication cycle on the network
+     0F initiate a auto network cycle to join new device. New device must respond with message 0x03 replacing DF from 01 to 09. If ok master 
+	    display show "ADD" and new device ID is permanently stored in memory. 
        
 PL - Maximum payload length of the message expected from the mentioned device. Note that a payload of zero bytes means
      that there is no window at all for this device.
 
 CS - Checksum
+
+
 
 ********************************
 *** Message 0x02 (Send Data) ***
@@ -357,6 +363,9 @@ device with this message.
 |01 0A 8B 60|01|0B 8B 60|03|01|09|FA|0F|0F|00 1A|1A|
 
 PL - Maximum payload length of a message using this slot
+
+DF - 01 normal communication cycle on the network
+     09 auto network cycle to join new device
 
 CS - Checksum of the entire payload
 
